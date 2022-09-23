@@ -6,4 +6,5 @@ public class CryptView {
     private JButton sendButton;
     private JTextArea cryptTextArea;
     private JTextArea messageTextArea;
+    private JPanel view;
 }
