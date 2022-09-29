@@ -3,25 +3,29 @@ import java.util.ArrayList;
 
 public class CryptModel {
     private String encryption;
-    private String message;
-    private String key;
 
     public void makeEncryption(String m, String k){
         String fileortext = makeIsItFileOrText(m, k);
-        if(fileortext.charAt(0) == 'f'){
-            message = readFile(m);
-        }
-        else{
-            message = m;
-        }
-        if(fileortext.charAt(1) == 'f'){
-            key = readFile(k);
-        }
-        else{
-            key = k;
-        }
+        String message = makeString(m, fileortext);
+        String key = makeString(k, fileortext);
         encryption = encryptString(message, key);
         writeEncryptedFile(encryption);
+    }
+
+    public String makeString(String s, String fs){
+        int x = 0;
+        if(fs.length() != 2){
+            x = 1;
+        }
+        return makeMessageOrKeyString(s, fs, x);
+    }
+
+    public String makeMessageOrKeyString(String s, String fs, int x){
+        fs = fs + ' ';
+        if(fs.charAt(x) == 'f'){
+            s = readFile(s);
+        }
+        return s;
     }
 
     public void writeEncryptedFile(String c){
@@ -101,14 +105,6 @@ public class CryptModel {
     public String makeIsItFileOrText(String m, String k){
         String answer = isItFileOrString(m) + isItFileOrString(k);
         return answer;
-    }
-
-    public String getMessage(){
-        return message;
-    }
-
-    public String getKey(){
-        return key;
     }
 
     public String getEncryption(){
