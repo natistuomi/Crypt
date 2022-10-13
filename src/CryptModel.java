@@ -3,11 +3,21 @@ import java.util.ArrayList;
 
 public class CryptModel {
     private String encryption;
+    private String message;
+    private String key;
 
-    public void makeEncryption(String m, String k){
-        String fileortext = makeIsItFileOrText(m, k);
-        String message = makeString(m, fileortext);
-        String key = makeString(k, fileortext);
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public void makeEncryption(){
+        String fileortext = makeIsItFileOrText(message, key);
+        message = makeString(message, fileortext);
+        key = makeString(key, fileortext);
         encryption = encryptString(message, key);
         writeEncryptedFile(encryption);
     }
