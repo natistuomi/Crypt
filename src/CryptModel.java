@@ -18,7 +18,7 @@ public class CryptModel {
         String fileortext = makeIsItFileOrText(message, key);
         message = makeString(message, fileortext);
         key = makeString(key, fileortext);
-        encryption = encryptString(message, key);
+        encryption = encryptString();
         writeEncryptedFile(encryption);
     }
 
@@ -57,12 +57,12 @@ public class CryptModel {
         return m^k;
     }
 
-    public String encryptString(String m, String k){
-        int kl = k.length();
+    public String encryptString(){
+        int kl = key.length();
         String s = "";
-        for(int i = 0; i < m.length(); i++){
-            char x = m.charAt(i);
-            char y = k.charAt(i%kl);
+        for(int i = 0; i < message.length(); i++){
+            char x = message.charAt(i);
+            char y = key.charAt(i%kl);
             s = s + (char)cryptChar(x,y);
         }
         return s;
