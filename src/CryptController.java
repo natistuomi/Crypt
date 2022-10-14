@@ -2,14 +2,14 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class CryptController {
+public class CryptController extends JFrame{
     CryptModel model;
     CryptView view;
 
     public CryptController(CryptModel m, CryptView v){
         this.model = m;
         this.view = v;
-        this.setContentPane(view.getPanel());
+        this.setContentPane(view.getView());
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.pack();
         this.setVisible(true);
@@ -21,7 +21,7 @@ public class CryptController {
             model.setMessage(view.getMessage());
             model.setKey(view.getKey());
             model.makeEncryption();
-            view.setCrypt(model.getEncryption());
+            view.setCrypt(model.getKey());
         }
     }
 

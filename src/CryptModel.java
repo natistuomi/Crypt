@@ -14,6 +14,14 @@ public class CryptModel {
         this.key = key;
     }
 
+    public String getEncryption(){
+        return encryption;
+    }
+
+    public String getMessage() { return message;}
+
+    public String getKey() { return key;}
+
     public void makeEncryption(){
         String fileortext = makeIsItFileOrText(message, key);
         message = makeString(message, fileortext);
@@ -104,9 +112,11 @@ public class CryptModel {
     public String isItFileOrString(String x){
         String goal = "txt.";
         int length = x.length();
-        for(int i = 0; i < 4; i++){
-            if(x.charAt(length-i) != goal.charAt(i)){
-                return "s";
+        if(length > 4){
+            for(int i = 1; i < 5; i++){
+                if(x.charAt(length-i) != goal.charAt(i)){
+                    return "s";
+                }
             }
         }
         return "f";
@@ -115,10 +125,6 @@ public class CryptModel {
     public String makeIsItFileOrText(String m, String k){
         String answer = isItFileOrString(m) + isItFileOrString(k);
         return answer;
-    }
-
-    public String getEncryption(){
-        return encryption;
     }
 
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="CryptView">
-  <grid id="27dc6" binding="view" layout-manager="GridLayoutManager" row-count="5" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="view" layout-manager="GridLayoutManager" row-count="5" column-count="2" same-size-horizontally="false" same-size-vertically="true" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="20" y="20" width="468" height="400"/>
@@ -23,7 +23,7 @@
           </grid>
         </constraints>
         <properties>
-          <text value="messageName"/>
+          <text value=""/>
         </properties>
       </component>
       <component id="b993b" class="javax.swing.JLabel">
@@ -41,7 +41,7 @@
           </grid>
         </constraints>
         <properties>
-          <text value="keyName"/>
+          <text value=""/>
         </properties>
       </component>
       <component id="c18cb" class="javax.swing.JButton" binding="sendButton" default-binding="true">
@@ -59,7 +59,7 @@
           </grid>
         </constraints>
         <properties>
-          <text value="encryption"/>
+          <text value=""/>
         </properties>
       </component>
       <component id="4c24" class="javax.swing.JLabel">
