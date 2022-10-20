@@ -124,6 +124,7 @@ public class CryptModel {
         PrintWriter outfile = openTextFileForWriting("encryption.txt");
         outfile.print(s);
         outfile.flush();
+        outfile.close();
     }
 
     public PrintWriter openTextFileForWriting(String filename) {
