@@ -118,13 +118,13 @@ public class CryptModel {
                     return "s";
                 }
             }
+            return "f";
         }
-        return "f";
+        return "s";
     }
 
     public String makeIsItFileOrText(String m, String k){
-        String answer = isItFileOrString(m) + isItFileOrString(k);
-        return answer;
+        return isItFileOrString(m) + isItFileOrString(k);
     }
 
 }
