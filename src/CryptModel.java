@@ -114,7 +114,7 @@ public class CryptModel {
         int length = x.length();
         if(length > 4){
             for(int i = 1; i < 5; i++){
-                if(x.charAt(length-i) != goal.charAt(i)){
+                if(x.charAt(length-i) != goal.charAt(i-1)){
                     return "s";
                 }
             }
