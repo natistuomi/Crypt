@@ -30,17 +30,17 @@ public class CryptModel {
         writeEncryptedFile(encryption);
     }
 
-    public String makeString(String s, String fs){
+    public String makeString(String s, String ft){
         int x = 0;
-        if(fs.length() != 2){
+        if(ft.length() != 2){
             x = 1;
         }
-        return makeMessageOrKeyString(s, fs, x);
+        return makeMessageOrKeyString(s, ft, x);
     }
 
-    public String makeMessageOrKeyString(String s, String fs, int x){
-        fs = fs + ' ';
-        if(fs.charAt(x) == 'f'){
+    public String makeMessageOrKeyString(String s, String ft, int x){
+        ft = ft + ' ';
+        if(ft.charAt(x) == 'f'){
             s = readFile(s);
         }
         return s;

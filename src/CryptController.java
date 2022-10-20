@@ -21,7 +21,7 @@ public class CryptController extends JFrame{
             model.setMessage(view.getMessage());
             model.setKey(view.getKey());
             model.makeEncryption();
-            view.setCrypt(model.getMessage());
+            view.setCrypt(model.getEncryption());
         }
     }
 
